@@ -13,7 +13,7 @@
     <link rel="icon" type="image/png" href="images/bateria.png">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/estilos.css">
-    <script src="main.js"></script>
+    
     
 </head>
 <body>
@@ -21,6 +21,7 @@
     <h1>Alura Midi</h1>
 
     <section class="teclado">
+        <!-- Poner onclick dentro de la etiqueta no es una buena practica, esto lo tenemos que hacer en el arhivo main.js -->
         <button class="tecla tecla_pom">Pom</button>
         <button class="tecla tecla_clap">Clap</button>
         <button class="tecla tecla_tim">Tim</button>
@@ -44,6 +45,8 @@
     <audio src="sounds/keyx.wav" id="sonido_tecla_tic"></audio>
     <audio src="sounds/keyc.wav" id="sonido_tecla_tom"></audio>
     
+    <!-- En este caso, el script va en el final del body porque los audios no fueron cargados sino hasta este punto -->>
+    <script src="main.js"></script>
     
 </body>
 </html>
