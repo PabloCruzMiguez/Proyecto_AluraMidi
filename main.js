@@ -2,14 +2,25 @@
 // NO se deben poner los parentesis
 //document.querySelector('.tecla_pom').onclick = playSonidoPom;
 
-function playSonidoPom(){
-    document.querySelector('#sonido_tecla_pom').play();
+function playSonido(idElementoAudio){
+    document.querySelector(idElementoAudio).play();
 }
-
-function playSonidoClap() {
-    document.querySelector('#sonido_tecla_clap').play()
-}
-
 
 const listaDeTeclas = document.querySelectorAll('.tecla');
-listaDeTeclas[0].onclick = playSonidoPom;
+
+let contador = 0;
+
+while (contador < 9){
+    const tecla = listaDeTeclas[contador];
+    const instrumento = tecla.classList[1];
+
+    const idAudio = `#sonido_${instrumento}`;
+    console.log(idAudio);
+
+    tecla.onclick = function(){
+        playSonido(idAudio);
+    };
+    contador = contador + 1;
+
+}
+
